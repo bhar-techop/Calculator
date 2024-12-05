@@ -15,35 +15,46 @@
         
         <table>
             <tr>
-                <td><button>7</button></td>
-                <td><button>8</button></td>
-                <td><button>9</button></td>
-                <td><button>/</button></td>
+                <td><button onclick="getValueFromButtons('7')">7</button></td>
+                <td><button onclick="getValueFromButtons('8')">8</button></td>
+                <td onclick="getValueFromButtons('9')"><button>9</button></td>
+                <td onclick="getValueFromButtons('/')"><button>/</button></td>
             </tr>
             <tr>
-                <td><button>4</button></td>
-                <td><button>5</button></td>
-                <td><button>6</button></td>
-                <td><button>*</button></td>
+                <td><button onclick="getValueFromButtons('4')">4</button></td>
+                <td><button onclick="getValueFromButtons('5')">5</button></td>
+                <td><button onclick="getValueFromButtons('6')">6</button></td>
+                <td><button onclick="getValueFromButtons('*')">*</button></td>
             </tr>
             <tr>
-                <td><button>1</button></td>
-                <td><button>2</button></td>
-                <td><button>3</button></td>
-                <td><button>-</button></td>
+                <td><button onclick="getValueFromButtons('1')">1</button></td>
+                <td><button onclick="getValueFromButtons('2')">2</button></td>
+                <td><button onclick="getValueFromButtons('3')">3</button></td>
+                <td><button onclick="getValueFromButtons('-')">-</button></td>
             </tr>
             <tr>
-                <td><button>.</button></td>
-                <td  colspan="2"><button>0</button></td>
-                <td><button>+</button></td>
+                <td><button onclick="getValueFromButtons('.')">.</button></td>
+                <td  colspan="2"><button onclick="getValueFromButtons('0')">0</button></td>
+                <td><button onclick="getValueFromButtons('+')">+</button></td>
             </tr>
             <tr>
-                <td><button>%</button></td>
-                <td  colspan="2"><button>CLEAR</button></td>
-                <td><button>=</button></td>
+                <td><button onclick="getValueFromButtons('%')">%</button></td>
+                <td  colspan="2"><button  onclick="clearTextBox()">CLEAR</button></td>
+                <td><button onclick="result('')">=</button></td>
             </tr>
         </table>
         </div>
     </section>
+    <script>
+        function getValueFromButtons(value){
+             document.getElementById('calc').value+=value
+        }
+        function clearTextBox(){
+            document.getElementById('calc').value=''
+        }
+        function result(){
+            document.getElementById('calc').value=eval(document.getElementById('calc').value)
+        }
+    </script>
 </body>
 </html>
